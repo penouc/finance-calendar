@@ -3,7 +3,6 @@ VERSION:2.0
 PRODID:-//Stock Earnings Calendar//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-NAME:美股财报日历
 X-APPLE-CALENDAR-NAME:美股财报日历
 X-WR-CALDESC:美股公司财报发布日历
 X-WR-CALNAME:美股财报日历
