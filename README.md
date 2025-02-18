@@ -48,9 +48,9 @@ graph TD
 https://raw.githubusercontent.com/penouc/finance-calendar/main/earnings_calendar.ics
 ```
 打开您的日历应用：
-Google Calendar：侧边栏 > 其他日历 > 从URL添加
-Outlook：日历视图 > 添加日历 > 从网络订阅
-iOS：设置 > 日历 > 账户 > 添加账户 > 其他 > 添加订阅日历
+- Google Calendar：侧边栏 > 其他日历 > 从URL添加
+- Outlook：日历视图 > 添加日历 > 从网络订阅
+- iOS：设置 > 日历 > 账户 > 添加账户 > 其他 > 添加订阅日历
 
 ### 高级功能(WIP)
 
