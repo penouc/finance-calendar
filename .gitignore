@@ -1,0 +1,5 @@
+stock_list/
+stock_dev/
+stock_data.py
+stock_to_ics.py
+requirements.txt
