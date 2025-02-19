@@ -35,8 +35,30 @@ jobs:
       - name: Update README.md
         run: |
           visits=${{ steps.increment.outputs.visits }}
-          badge="![Visits](https://img.shields.io/badge/Visits-23455-blue)"
-          sed -i 's|!\[Visits\](https://img.shields.io/badge/Visits-.*-blue)|'"$badge"'|' README.md
+          # 使用实际的访问量构建徽章
+          badge="![Visits](https://img.shields.io/badge/Visits-${visits}-blue)"
+
+          # 检查 README.md 是否存在
+          if [ ! -f README.md ]; then
+            echo "README.md 不存在"
+            exit 1
+          fi
+
+          # 备份原始文件
+          cp README.md README.md.bak
+
+          # 使用更可靠的方式更新徽章
+          sed -i.bak "s|!\[Visits\](https://img\.shields\.io/badge/Visits-[0-9]*-blue)|${badge}|g" README.md
+
+          # 验证更新是否成功
+          if ! grep -q "$badge" README.md; then
+            echo "更新徽章失败，恢复备份"
+            mv README.md.bak README.md
+            exit 1
+          fi
+
+          # 清理备份文件
+          rm -f README.md.bak
 
       - name: Commit and push changes
         run: |
