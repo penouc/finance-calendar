@@ -48,14 +48,15 @@ jobs:
 
           cp README.md README.md.bak
 
+          # 修复 awk 正则表达式中的转义问题
           awk -v badge="$badge" '{
-              if (match($0, "!\[Visits\](https://img\.shields\.io/badge/Visits-[0-9]+-blue)")) {
+              if (match($0, /!\[Visits\]\(https:\/\/img\.shields\.io\/badge\/Visits-[0-9]+-blue\)/)) {
                   $0 = substr($0, 1, RSTART - 1) badge substr($0, RSTART + RLENGTH);
               }
               print;
           }' README.md > README.md.tmp && mv README.md.tmp README.md
 
-          if ! grep -q "$badge" README.md; then
+          if ! grep -q "$(echo "$badge" | sed 's/[]\/$*.^[]/\\&/g')" README.md; then
               echo "更新徽章失败，恢复备份"
               mv README.md.bak README.md
               exit 1
