@@ -4,7 +4,7 @@
 [![iCal Subscription](https://img.shields.io/badge/Dynamic_Calendar-ICS_2.0-blue)](订阅地址)
 [![News Coverage](https://img.shields.io/badge/News_AI-Real--time_Updates-green)](新闻覆盖)
 [![License](https://img.shields.io/badge/License-MIT-orange)](LICENSE)
-![](https://api.visitorbadge.io/api/VisitorHit?user=penouc&repo=finance-calendar&countColor=%237B1E7A)
+![Visitor count](https://shields-io-visitor-counter.herokuapp.com/badge?page=penouc.finance-calendar)
 
 跨市场金融事件订阅平台，集成财报日程与智能新闻分析系统
 
