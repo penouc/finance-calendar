@@ -8,12 +8,20 @@ on:
     - cron: "*/15 * * * *" # Runs every 15 minutes
 
 jobs:
-  update-visits:
+  update_visits:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - name: Set up SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_KEY }}
+          known_hosts: "just_accept" # 不太安全，但简化了设置。 生产环境中，添加主机密钥
+
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
 
       - name: Increment visit counter
         id: increment
@@ -30,10 +38,8 @@ jobs:
           badge="![Visits](https://img.shields.io/badge/Visits-23455-blue)"
           sed -i 's|!\[Visits\](https://img.shields.io/badge/Visits-.*-blue)|'"$badge"'|' README.md
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
           git add visits.txt README.md
           git commit -m 'Update visits count'
-          git push
+          git push origin main # 或你想要推送的分支名
