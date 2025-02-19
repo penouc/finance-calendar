@@ -5,10 +5,10 @@ on:
     branches:
       - main
     paths:
-      - 'visits.txt'
-      - 'README.md'
+      - "visits.txt"
+      - "README.md"
   schedule:
-    - cron: "*/10 * * * *" # Runs every 15 minutes
+    - cron: "*/15 * * * *" # Runs every 15 minutes
 
 jobs:
   update_visits:
