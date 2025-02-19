@@ -42,4 +42,4 @@ jobs:
         run: |
           git add visits.txt README.md
           git commit -m 'Update visits count'
-          git push origin main # 或你想要推送的分支名
+          git push git@github.com:penouc/finance-calendar.git main # 或你想要推送的分支名
