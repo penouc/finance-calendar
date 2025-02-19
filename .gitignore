@@ -2,4 +2,6 @@ stock_list/
 stock_dev/
 stock_data.py
 stock_to_ics.py
+generate_earnings_calendar.py
 requirements.txt
+.env
