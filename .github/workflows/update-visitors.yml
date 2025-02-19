@@ -27,13 +27,13 @@ jobs:
       - name: Update README.md
         run: |
           visits=${{ steps.increment.outputs.visits }}
-          badge="![Visits](https://img.shields.io/badge/Visits-23454-blue)"
+          badge="![Visits](https://img.shields.io/badge/Visits-23455-blue)"
           sed -i 's|!\[Visits\](https://img.shields.io/badge/Visits-.*-blue)|'"$badge"'|' README.md
 
       - name: Commit changes
         run: |
-          git config --global user.name 'penouc'
-          git config --global user.email 'penouche@gmail.com'
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
           git add visits.txt README.md
           git commit -m 'Update visits count'
           git push
