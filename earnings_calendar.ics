@@ -7055,6 +7055,27 @@ DESCRIPTION:公司: Take 2 Interactive\n股票代码: TTWO\n国家: USA\n
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Fidelity National Information Services(FIS)财报
+DTSTART;TZID=Asia/Shanghai:20241105T090000
+DTEND;TZID=Asia/Shanghai:20241105T100000
+DESCRIPTION:公司: Fidelity National Information Services\n股票代码: 
+ FIS\n国家: USA\n
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Fidelity National Information Services(FIS)财报
+DTSTART;TZID=Asia/Shanghai:20250212T090000
+DTEND;TZID=Asia/Shanghai:20250212T100000
+DESCRIPTION:公司: Fidelity National Information Services\n股票代码: 
+ FIS\n国家: USA\n
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Fidelity National Information Services(FIS)财报
+DTSTART;TZID=Asia/Shanghai:20250507T090000
+DTEND;TZID=Asia/Shanghai:20250507T100000
+DESCRIPTION:公司: Fidelity National Information Services\n股票代码: 
+ FIS\n国家: USA\n
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Fidelity National Information Services(FIS)财报
 DTSTART;TZID=Asia/Shanghai:20250606T090000
 DTEND;TZID=Asia/Shanghai:20250606T100000
 DESCRIPTION:公司: Fidelity National Information Services\n股票代码: 
